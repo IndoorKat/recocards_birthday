@@ -98,6 +98,15 @@
 
 
 
+# **Integrated Mods**
+
+- Rhythm Arcade
+- Punch-Out Arcade
+- GlimmersBirthdayed
+- Celebratium
+- Hämis Party
+- Custom Credits
+
 # **Installation**
 
 # 

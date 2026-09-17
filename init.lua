@@ -1,3 +1,4 @@
+dofile_once("mods/recocards_birthday/files/custom_credits/custom_credits.lua")
 ModLuaFileAppend("data/scripts/gun/gun_actions.lua","mods/recocards_birthday/files/birthday_actions.lua")
 ModLuaFileAppend("data/scripts/gun/gun_actions.lua","mods/recocards_birthday/files/glimmer_birthday/gun_actions.lua")
 dofile_once("mods/recocards_birthday/files/glimmer_birthday/glimmer.lua")
@@ -79,6 +80,7 @@ end
 -- === end Moist Mobbing wiring ================================================
 
 function OnModInit()
+    BirthdayCredits_OnModInit()
     RhythmArcade_OnModInit()
     BirthdayGlimmer_OnModInit()
     PunchOutArcade_OnModInit()
