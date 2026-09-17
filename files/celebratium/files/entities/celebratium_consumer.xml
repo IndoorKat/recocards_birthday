@@ -1,0 +1,14 @@
+<Entity>
+  <MagicConvertMaterialComponent
+    from_material="celebratium_confetti"
+    to_material="celebratium_confetti_spent"
+    radius="24"
+    min_radius="0"
+    is_circle="1"
+    steps_per_frame="256"
+    loop="0"
+    kill_when_finished="1"
+    convert_entities="0"
+    convert_same_material="0" />
+  <LifetimeComponent lifetime="8" />
+</Entity>

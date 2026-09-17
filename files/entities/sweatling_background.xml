@@ -1,0 +1,24 @@
+<!-- sweatling_background.xml - the BACKGROUND moist-mob sweatling variant.
+     Inherits the shared visual from sweatling_base.xml. Placed STATIONARY at a
+     ring cell around the gifter (no projectile, no gravity, no velocity, no
+     spin) and self-despawns via a LifetimeComponent whose lifetime is set at
+     spawn from config (mob_lifetime_frames / gifter_lifetime_frames), so there
+     is no hardcoded lifetime here to keep in lockstep, and nothing accumulates.
+
+     Sprites (cosmetics + rolled emote) are added at spawn via
+     attach_sweatling_sprites at config scale/z; the gifter also gets a name. No
+     SpriteComponent is defined here (a base sprite would render an extra,
+     always-native-size, frontmost emote on top of the dressed layers). -->
+<Entity name="sweatling_background" tags="polymorphable_NOT">
+  <Base file="mods/recocards_birthday/files/entities/sweatling_base.xml"></Base>
+
+  <!-- Self-despawn. lifetime is OVERWRITTEN at spawn from the config value.
+       Placeholder MUST be -1 (endless): the engine kills the entity after
+       `lifetime` frames for any value != -1, so 0 would kill it INSTANTLY on
+       frame 0 (racing our ComponentSetValue2 override -> nothing ever appears).
+       -1 means it persists until our Lua sets the real lifetime. -->
+  <!-- <LifetimeComponent
+    lifetime="480"
+  ></LifetimeComponent> -->
+
+</Entity>

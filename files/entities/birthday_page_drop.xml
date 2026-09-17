@@ -1,0 +1,39 @@
+<Entity name="birthday_page_drop" tags="item_pickup,recocards_dropped_page">
+  <SpriteComponent
+    image_file="data/items_gfx/book.png"
+    alpha="1"
+    z_index="0"
+    smooth_filtering="0"
+    emissive="1"
+    update_transform="1"
+    has_special_scale="1"
+    special_scale_x="0.55"
+    special_scale_y="0.55"
+  />
+  <VelocityComponent
+    gravity_x="0"
+    gravity_y="220"
+    mass="0.25"
+    air_friction="0.93"
+    terminal_velocity="90"
+  />
+  <ItemComponent
+    item_name="Birthday Page"
+    ui_description="A page left behind by a Birthday Spirit."
+    is_pickable="1"
+    auto_pickup="0"
+    stats_count_as_item_pick_up="0"
+    item_pickup_radius="28"
+    play_spinning_animation="0"
+    play_hover_animation="0"
+    always_use_item_name_in_ui="1"
+  />
+  <LuaComponent
+    script_source_file="mods/recocards_birthday/files/scripts/birthday_page_ground.lua"
+    execute_every_n_frame="1"
+  />
+  <LuaComponent
+    script_item_picked_up="mods/recocards_birthday/files/scripts/birthday_page_pickup.lua"
+    execute_every_n_frame="-1"
+  />
+</Entity>

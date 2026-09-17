@@ -1,0 +1,104 @@
+<Materials>
+  <CellDataChild
+    _parent="purifying_powder"
+    _inherit_reactions="0"
+    name="recocards_guiding_powder"
+    ui_name="$mat_recocards_guiding_powder"
+    wang_color="ffb6d5d9"
+    tags="[NO_FUNGAL_SHIFT]"
+    burnable="0"
+    on_fire="0"
+    danger_fire="0"
+    autoignition_temperature="999999"
+  >
+  </CellDataChild>
+
+  <CellDataChild
+    _parent="plasma_fading_pink"
+    _inherit_reactions="0"
+    name="recocards_guiding_particle_red"
+    ui_name="$mat_recocards_guiding_powder"
+    wang_color="fff04f4f"
+  >
+    <Graphics color="fff04f4f" />
+  </CellDataChild>
+
+  <CellDataChild
+    _parent="plasma_fading_pink"
+    _inherit_reactions="0"
+    name="recocards_guiding_particle_orange"
+    ui_name="$mat_recocards_guiding_powder"
+    wang_color="fff28a3c"
+  >
+    <Graphics color="fff28a3c" />
+  </CellDataChild>
+
+  <CellDataChild
+    _parent="plasma_fading_pink"
+    _inherit_reactions="0"
+    name="recocards_guiding_particle_yellow"
+    ui_name="$mat_recocards_guiding_powder"
+    wang_color="fff2dc4c"
+  >
+    <Graphics color="fff2dc4c" />
+  </CellDataChild>
+
+  <CellDataChild
+    _parent="plasma_fading_pink"
+    _inherit_reactions="0"
+    name="recocards_guiding_particle_green"
+    ui_name="$mat_recocards_guiding_powder"
+    wang_color="ff66db68"
+  >
+    <Graphics color="ff66db68" />
+  </CellDataChild>
+
+  <CellDataChild
+    _parent="plasma_fading_pink"
+    _inherit_reactions="0"
+    name="recocards_guiding_particle_cyan"
+    ui_name="$mat_recocards_guiding_powder"
+    wang_color="ff57d8df"
+  >
+    <Graphics color="ff57d8df" />
+  </CellDataChild>
+
+  <CellDataChild
+    _parent="plasma_fading_pink"
+    _inherit_reactions="0"
+    name="recocards_guiding_particle_blue"
+    ui_name="$mat_recocards_guiding_powder"
+    wang_color="ff5d7ee8"
+  >
+    <Graphics color="ff5d7ee8" />
+  </CellDataChild>
+
+  <CellDataChild
+    _parent="plasma_fading_pink"
+    _inherit_reactions="0"
+    name="recocards_guiding_particle_violet"
+    ui_name="$mat_recocards_guiding_powder"
+    wang_color="ffb06be8"
+  >
+    <Graphics color="ffb06be8" />
+  </CellDataChild>
+
+  <Reaction
+    probability="8"
+    input_cell1="recocards_guiding_powder"
+    input_cell2="air"
+    output_cell1="air"
+    output_cell2="air"
+    entity="mods/recocards_birthday/files/entities/birthday_guiding_reaction_trigger.xml"
+    fast_reaction="0"
+  />
+
+  <Reaction
+    probability="100"
+    input_cell1="mimic_liquid"
+    input_cell2="recocards_guiding_powder"
+    output_cell1="recocards_guiding_powder"
+    output_cell2="recocards_guiding_powder"
+    fast_reaction="1"
+  />
+</Materials>

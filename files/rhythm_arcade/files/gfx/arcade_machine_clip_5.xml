@@ -1,0 +1,17 @@
+<Sprite
+    filename="mods/recocards_birthday/files/rhythm_arcade/files/gfx/arcade_machine_clip_5.png"
+    offset_x="0"
+    offset_y="0"
+    default_animation="clip">
+    <RectAnimation
+        name="clip"
+        pos_x="0"
+        pos_y="0"
+        frame_count="276"
+        frame_width="55"
+        frame_height="70"
+        frame_wait="0.04"
+        frames_per_row="19"
+        loop="1">
+    </RectAnimation>
+</Sprite>

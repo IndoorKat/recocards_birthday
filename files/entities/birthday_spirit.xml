@@ -1,0 +1,79 @@
+<Entity name="birthday_spirit" tags="hittable">
+  <SpriteComponent
+    _tags="character"
+    image_file="data/enemies_gfx/playerghost.xml"
+    rect_animation="walk"
+    alpha="0.92"
+    emissive="1"
+    update_transform="1"
+    z_index="0"
+  />
+
+  <HitboxComponent
+    _tags="hittable"
+    is_player="0"
+    is_enemy="0"
+    is_item="0"
+    aabb_min_x="-5"
+    aabb_max_x="5"
+    aabb_min_y="-9"
+    aabb_max_y="9"
+    damage_multiplier="1"
+  />
+
+  <DamageModelComponent
+    hp="10"
+    max_hp="10"
+    blood_material="spark_blue"
+    ragdoll_material="spark_blue"
+    air_in_lungs="1"
+    air_in_lungs_max="1"
+    air_needed="0"
+    falling_damages="0"
+    materials_damage="0"
+    wet_status_effect_damage="0"
+    fire_probability_of_ignition="0"
+  />
+
+  <VelocityComponent
+    gravity_x="0"
+    gravity_y="0"
+    mass="0.6"
+    air_friction="0.96"
+    terminal_velocity="120"
+  />
+
+  <LuaComponent
+    script_source_file="mods/recocards_birthday/files/scripts/birthday_spirit_custom_update.lua"
+    execute_every_n_frame="1"
+  />
+
+  <LuaComponent
+    script_interacting="mods/recocards_birthday/files/scripts/birthday_spirit_interact.lua"
+    execute_every_n_frame="-1"
+  />
+
+
+  <LuaComponent
+    script_source_file="mods/recocards_birthday/files/scripts/birthday_spirit_death_watch.lua"
+    execute_every_n_frame="1"
+  />
+
+
+  <LuaComponent
+    script_damage_received="mods/recocards_birthday/files/scripts/birthday_spirit_damage_received.lua"
+    execute_every_n_frame="-1"
+  />
+
+
+  <LuaComponent
+    script_death="mods/recocards_birthday/files/scripts/birthday_spirit_death.lua"
+    execute_every_n_frame="-1"
+  />
+
+  <InteractableComponent
+    radius="36"
+    ui_text="Collect Birthday Page"
+    name="birthday_page"
+  />
+</Entity>

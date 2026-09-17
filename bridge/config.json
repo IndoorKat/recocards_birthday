@@ -1,0 +1,46 @@
+{
+  "url": "https://recocards.com/board/happy-birthday-dunk-156008746017",
+  "viewport": {
+    "width": 1440,
+    "height": 1200
+  },
+  "waitAfterLoadMs": 3500,
+  "cardSelector": "",
+  "maxCards": 100,
+  "minimumCardWidth": 140,
+  "minimumCardHeight": 80,
+  "maximumCardWidth": 1000,
+  "maximumCardHeight": 1000,
+  "autoSelectors": [
+    "[data-testid*='card' i]",
+    "[data-testid*='message' i]",
+    "[class*='greeting-card' i]",
+    "[class*='message-card' i]",
+    "[class*='card' i]",
+    "article",
+    "[class*='message' i]",
+    "[class*='post' i]",
+    "[class*='entry' i]",
+    "[class*='wish' i]",
+    "[class*='greeting' i]",
+    "li",
+    "section"
+  ],
+  "hideSelectors": [
+    "[id*='cookie' i]",
+    "[class*='cookie' i]",
+    "[class*='consent' i]"
+  ],
+  "captureScale": 2,
+  "dedupeNestedCards": true,
+  "animationDetectionSamples": 2,
+  "animationDetectionDelayMs": 180,
+  "animationFps": 6,
+  "animationDurationSeconds": 3,
+  "maxAnimationFrames": 18,
+  "reuseCachedCards": true,
+  "waitAfterLegacyBoardClickMs": 3500,
+  "legacyScrollMaxPasses": 50,
+  "legacyScrollPauseMs": 350,
+  "legacyScrollFinalWaitMs": 1500
+}

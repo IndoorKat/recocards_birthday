@@ -1,0 +1,39 @@
+<!-- sweatling_base.xml - BASE entity holding only what's COMMON to ALL sweatling
+     variants (interactable in-world = sweatling.xml, background rain =
+     sweatling_background.xml). Children inherit via <Base file="..."> and add
+     their own physics/behavior.
+
+     Noita's <Base> can ADD/OVERRIDE inherited components but NOT remove them, so
+     anything that DIFFERS between variants must live in the children, not here.
+     The interactable and background variants have fundamentally different
+     physics (grounded character bust vs. free-falling background debris), so the
+     base keeps ONLY the shared visual + gold suppression. Character physics,
+     collision, AI, damage and hitbox now live in sweatling.xml; the background
+     variant defines its own falling physics in sweatling_background.xml.
+
+     The `character`-tagged SpriteComponent's image is overwritten at spawn with
+     the rolled emote; cosmetic layers are added on top at spawn time. -->
+<Entity name="sweatling_base" tags="polymorphable_NOT">
+
+  <!-- Suppress any gold drop the intended way (drop_money.lua checks this tag). -->
+  <VariableStorageComponent
+    _tags="no_gold_drop"
+    name="no_gold_drop"
+    value_int="1"
+  ></VariableStorageComponent>
+
+  <!-- character = the face/emote layer (backmost); overwritten at spawn. -->
+  <!-- <SpriteComponent
+    _tags="character"
+    image_file="mods/recocards_birthday/files/gfx/sweatling/emote_happy.xml"
+    rect_animation="idle"
+    next_rect_animation="idle"
+    offset_x="0"
+    offset_y="0"
+    z_index="1.3"
+    update_transform="1"
+  ></SpriteComponent> -->
+
+  <SpriteAnimatorComponent></SpriteAnimatorComponent>
+
+</Entity>

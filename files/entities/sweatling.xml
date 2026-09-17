@@ -1,0 +1,105 @@
+<!-- sweatling.xml - the INTERACTABLE in-world sweatling variant. Inherits the
+     shared visual from sweatling_base.xml and defines the grounded-bust physics
+     plus the interactable behavior:
+       - character physics (falls & settles on ground, sticky, no walking)
+       - collision + hitbox (hittable, damageable)
+       - stand-still AI
+       - DamageModel (no corpse/blood/gold/fire; fire-immune)
+       - script_death (damage death -> angry/red emitter)
+       - script_interacting (pick-up -> friendly/blue emitter + kill)
+       - InteractableComponent (the "Press $0 to accept card." prompt)
+     Cosmetic layers + AABB scaling are applied at spawn (spawn_sweatling).
+     Spawned by spawn_sweatling.lua. Tags add the interactable-only enemy/
+     hittable/mortal on top of the base's polymorphable_NOT. -->
+<Entity name="sweatling" tags="enemy,hittable,mortal">
+  <Base file="mods/recocards_birthday/files/entities/sweatling_base.xml"></Base>
+
+  <CharacterCollisionComponent></CharacterCollisionComponent>
+
+  <CharacterDataComponent
+    mass="10"
+    liquid_velocity_coeff="0"
+    gravity="250"
+    ground_stickyness="1"
+    collision_aabb_min_x="-6"
+    collision_aabb_max_x="6"
+    collision_aabb_min_y="-14"
+    collision_aabb_max_y="2"
+  ></CharacterDataComponent>
+
+  <!-- pixel_gravity drives the fall; no self-movement. -->
+  <CharacterPlatformingComponent
+    pixel_gravity="600"
+    run_velocity="0"
+    fly_velocity_x="0"
+    accel_x="0"
+  ></CharacterPlatformingComponent>
+
+  <ControlsComponent enabled="0"></ControlsComponent>
+
+  <!-- Stand-still AI: no attacks, food, or movement. -->
+  <AnimalAIComponent
+    preferred_job="JobDefault"
+    needs_food="0"
+    sense_creatures="0"
+    can_fly="0"
+    attack_melee_enabled="0"
+    attack_ranged_enabled="0"
+    attack_dash_enabled="0"
+    escape_if_damaged_probability="0"
+    creature_detection_range_x="0"
+    creature_detection_range_y="0"
+  ></AnimalAIComponent>
+
+  <!-- Damageable; no corpse/blood/gold/fire. Fire-immune via multiplier. -->
+  <DamageModelComponent
+    hp="5"
+    max_hp="5"
+    falling_damages="0"
+    air_needed="0"
+    materials_damage="0"
+    physics_objects_damage="0"
+    create_ragdoll="0"
+    drop_items_on_death="0"
+    fire_probability_of_ignition="0"
+    fire_damage_amount="0"
+    blood_material="water_salt"
+    blood_spray_create_some_cosmetic="1"
+    blood_multiplier="1"
+  >
+    <damage_multipliers
+      fire="0"
+    ></damage_multipliers>
+  </DamageModelComponent>
+
+  <HitboxComponent
+    aabb_min_x="-8"
+    aabb_max_x="8"
+    aabb_min_y="-16"
+    aabb_max_y="2"
+  ></HitboxComponent>
+
+  <!-- On DAMAGE death: grant the card + spawn the negative/angry (spark_red)
+       image-emitter. -->
+  <LuaComponent
+    script_death="mods/recocards_birthday/files/scripts/sweatling/sweatling_death.lua"
+    execute_every_n_frame="-1"
+  ></LuaComponent>
+
+  <!-- On PICK-UP: grant the card + spawn the positive/friendly (spark_blue)
+       emitter + kill. This is the intended "accept card" handoff. -->
+  <LuaComponent
+    script_interacting="mods/recocards_birthday/files/scripts/sweatling/sweatling_interact.lua"
+    execute_every_n_frame="-1"
+  ></LuaComponent>
+
+  <!-- Pick-up interaction. ui_text follows Noita's native prompt format: the
+       engine substitutes $0 with the player's MAPPED interact keybind at render
+       time (see native $ui_longleg_love = "Press $0 to pet"). -->
+  <InteractableComponent
+    radius="24"
+    ui_text="Press $0 to accept card."
+    name="sweatling_pickup"
+  ></InteractableComponent>
+
+</Entity>

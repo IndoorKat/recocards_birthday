@@ -1,0 +1,16 @@
+<Entity name="birthday_heart_fx">
+  <SpriteComponent
+    image_file="data/ui_gfx/status_indicators/charm.png"
+    alpha="1"
+    emissive="1"
+    update_transform="1"
+    z_index="-20"
+  />
+  <VelocityComponent
+    gravity_x="0"
+    gravity_y="-6"
+    mass="0.1"
+    air_friction="0.90"
+  />
+  <LifetimeComponent lifetime="45" />
+</Entity>

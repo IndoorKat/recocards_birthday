@@ -1,0 +1,8 @@
+<Entity name="birthday_guiding_reaction_trigger">
+  <LuaComponent
+    script_source_file="mods/recocards_birthday/files/scripts/birthday_guiding_reaction.lua"
+    execute_every_n_frame="-1"
+    execute_on_added="1"
+  />
+  <LifetimeComponent lifetime="2" />
+</Entity>

@@ -1,0 +1,17 @@
+<Sprite
+    filename="mods/recocards_birthday/files/rhythm_arcade/files/gfx/arcade_machine-sheet_idle.png"
+    offset_x="0"
+    offset_y="0"
+    default_animation="idle">
+    <RectAnimation
+        name="idle"
+        pos_x="0"
+        pos_y="0"
+        frame_count="2"
+        frame_width="55"
+        frame_height="70"
+        frame_wait="0.18"
+        frames_per_row="2"
+        loop="1">
+    </RectAnimation>
+</Sprite>
