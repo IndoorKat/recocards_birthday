@@ -1,4 +1,7 @@
 ModLuaFileAppend("data/scripts/gun/gun_actions.lua","mods/recocards_birthday/files/birthday_actions.lua")
+ModLuaFileAppend("data/scripts/gun/gun_actions.lua","mods/recocards_birthday/files/glimmer_birthday/gun_actions.lua")
+dofile_once("mods/recocards_birthday/files/glimmer_birthday/glimmer.lua")
+dofile_once("mods/recocards_birthday/files/punchout_arcade/arcade.lua")
 dofile_once("mods/recocards_birthday/files/rhythm_arcade/arcade.lua")
 dofile_once("mods/recocards_birthday/files/celebratium/celebratium.lua")
 
@@ -77,6 +80,8 @@ end
 
 function OnModInit()
     RhythmArcade_OnModInit()
+    BirthdayGlimmer_OnModInit()
+    PunchOutArcade_OnModInit()
     ModMaterialsFileAdd(
         "mods/recocards_birthday/files/birthday_materials.xml"
     )
@@ -1896,6 +1901,7 @@ end
 
 function OnPlayerSpawned(player_entity)
     Celebratium_OnPlayerSpawned(player_entity)
+    BirthdayGlimmer_OnPlayerSpawned(player_entity)
     apply_birthday_player_sprites(player_entity)
     give_starting_guiding_powder(player_entity)
     cleanup_recocards_origin_artifacts()
@@ -1958,6 +1964,7 @@ end
 
 function OnWorldPreUpdate()
     RhythmArcade_OnWorldPreUpdate()
+    PunchOutArcade_OnWorldPreUpdate()
 
     if gui == nil then
         gui=GuiCreate()
@@ -1979,4 +1986,5 @@ end
 
 function OnPlayerDied()
     RhythmArcade_OnPlayerDied()
+    PunchOutArcade_OnPlayerDied()
 end

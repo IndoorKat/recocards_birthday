@@ -1,0 +1,16 @@
+{4bce5662-de5a-06a1-1735-b4714672b1bc} bank:/Master Bank.strings
+{5bae07f5-03ab-44bd-b91b-cac0bc75a9c6} bank:/PunchOut
+{fcbd95c2-a34f-4c54-8fce-5ec6e949f678} event:/PunchOut/Lose/create
+{ea8f944c-05da-4a29-9c44-39a720fe7eaf} event:/PunchOut/Win/create
+{8224bb41-c81d-4368-b41a-8fcbd556a2c8} event:/PunchOut/bell
+{9b8906ca-ff1b-4b0c-b5ee-f28ff73f4d5a} event:/PunchOut/bell_end
+{dfd595b0-ebf8-471c-bcec-cbaa8c2bc2ad} event:/PunchOut/block
+{82cfc0b8-5b30-4ebe-944c-81d331554761} event:/PunchOut/create
+{7a62caa3-4757-48d6-83b1-670f269b390a} event:/PunchOut/dodge
+{d8ae8745-6373-4fdc-80d8-7d02af808406} event:/PunchOut/dunk_punch
+{79ec1bbd-1b15-4360-9b75-d3804c5341ed} event:/PunchOut/hit_dunk
+{333f80b3-6676-47af-adc3-5a362a844dec} event:/PunchOut/hit_tyson
+{8c1b8435-8f35-4d89-b11b-31cffc2b78ea} event:/PunchOut/lose
+{af759002-7025-4587-8a4f-64fdf871b72f} event:/PunchOut/punch_miss
+{fd61d348-5d88-4bec-ad3d-79e2e7fb9a93} event:/PunchOut/tyson_punch
+{a4b331b1-ec52-4e0f-8627-16afb0cab57f} event:/PunchOut/win

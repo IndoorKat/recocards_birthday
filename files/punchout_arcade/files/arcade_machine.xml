@@ -1,0 +1,16 @@
+<Entity name="punchout_arcade_machine" tags="punchout_arcade_machine">
+  <SpriteComponent
+    image_file="mods/recocards_birthday/files/punchout_arcade/files/gfx/arcade/arcade_machine.xml"
+    rect_animation="idle"
+    offset_x="0"
+    offset_y="0"
+    z_index="0.8"
+  />
+  <InteractableComponent
+    radius="34"
+    ui_text="$punchout_arcade_play"
+    name="punchout_arcade"
+    exclusivity_group="1"
+  />
+  <HitboxComponent aabb_min_x="-20" aabb_max_x="20" aabb_min_y="-68" aabb_max_y="0" />
+</Entity>
